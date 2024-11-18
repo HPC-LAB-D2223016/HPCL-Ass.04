@@ -1,0 +1,11 @@
+#include <omp.h>
+#include <stdio.h>
+
+int main() {
+    #pragma omp parallel num_threads(4)
+    {
+        int id = omp_get_thread_num();
+        printf("Thread %d says: My name is HPC Student\n", id);
+    }
+    return 0;
+}
